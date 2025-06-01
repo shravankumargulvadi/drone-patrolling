@@ -1,0 +1,131 @@
+[0.000000] (-) TimerEvent: {}
+[0.001783] (drone_control) JobQueued: {'identifier': 'drone_control', 'dependencies': OrderedDict()}
+[0.001892] (drone_control) JobStarted: {'identifier': 'drone_control'}
+[0.109255] (-) TimerEvent: {}
+[0.213554] (-) TimerEvent: {}
+[0.247062] (drone_control) JobProgress: {'identifier': 'drone_control', 'progress': 'cmake'}
+[0.275844] (drone_control) JobProgress: {'identifier': 'drone_control', 'progress': 'build'}
+[0.276459] (drone_control) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control', '--', '-j14', '-l14'], 'cwd': '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'eve-dse'), ('SSH_AGENT_PID', '1384'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/eve-dse/ros2_ws/install/px4_ros_com/lib:/home/eve-dse/ros2_ws/install/px4_msgs/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/home/eve-dse'), ('OLDPWD', '/home/eve-dse/ros2_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1029'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/eve-dse/ros2_ws/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'eve-dse'), ('JOURNAL_STREAM', '8:26621'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'eve-dse'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/foxy/bin:/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:/home/eve-dse/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/evedse-VirtualBox:@/tmp/.ICE-unix/1478,unix/evedse-VirtualBox:/tmp/.ICE-unix/1478'), ('INVOCATION_ID', 'c3ec06ea82494ef98782ea9b8cb40eb4'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/639379ea_d97c_4227_9a5b_0e3648eed0ba'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.80'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/eve-dse/ros2_ws/install/px4_ros_com:/home/eve-dse/ros2_ws/install/drone_control:/home/eve-dse/ros2_ws/install/px4_msgs:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/eve-dse/ros2_ws/install/px4_msgs/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/eve-dse/ros2_ws/install/px4_ros_com:/home/eve-dse/ros2_ws/install/drone_control:/home/eve-dse/ros2_ws/install/px4_msgs:/opt/ros/foxy')]), 'shell': False}
+[0.306991] (drone_control) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target drone_commander\x1b[0m\n'}
+[0.315408] (-) TimerEvent: {}
+[0.327309] (drone_control) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/drone_commander.dir/src/send_command_template.cpp.o\x1b[0m\n'}
+[0.415767] (-) TimerEvent: {}
+[0.522489] (-) TimerEvent: {}
+[0.628011] (-) TimerEvent: {}
+[0.742023] (-) TimerEvent: {}
+[0.856254] (-) TimerEvent: {}
+[0.963232] (-) TimerEvent: {}
+[1.084359] (-) TimerEvent: {}
+[1.118755] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KDroneControl::DroneControl()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.118980] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:27:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KDroneState\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[1.119020] (drone_control) StderrLine: {'line': b'   27 |         \x1b[01;31m\x1b[KDroneState\x1b[m\x1b[K current_state_ = DroneState::WAITING;\n'}
+[1.119050] (drone_control) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.122118] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:\x1b[m\x1b[K In lambda function:\n'}
+[1.122246] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:33:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcurrent_state_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[1.122286] (drone_control) StderrLine: {'line': b'   33 |             switch (\x1b[01;31m\x1b[Kcurrent_state_\x1b[m\x1b[K) {\n'}
+[1.122316] (drone_control) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.122344] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:34:22:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KDroneState\x1b[m\x1b[K\xe2\x80\x99 is not a class, namespace, or enumeration\n'}
+[1.122372] (drone_control) StderrLine: {'line': b'   34 |                 case \x1b[01;31m\x1b[KDroneState\x1b[m\x1b[K::WAITING:\n'}
+[1.122398] (drone_control) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.122424] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:35:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kcurrent_state_\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.122451] (drone_control) StderrLine: {'line': b'   35 |                     take_off()\n'}
+[1.122476] (drone_control) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[1.122507] (drone_control) StderrLine: {'line': b'      |                               \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[1.122532] (drone_control) StderrLine: {'line': b'   36 |                     \x1b[32m\x1b[Kcurrent_state_\x1b[m\x1b[K = DroneState::TAKING_OFF;\n'}
+[1.122558] (drone_control) StderrLine: {'line': b'      |                     \x1b[32m\x1b[K~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.122585] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:38:22:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KDroneState\x1b[m\x1b[K\xe2\x80\x99 is not a class, namespace, or enumeration\n'}
+[1.122612] (drone_control) StderrLine: {'line': b'   38 |                 case \x1b[01;31m\x1b[KDroneState\x1b[m\x1b[K::TAKING_OFF:\n'}
+[1.122637] (drone_control) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.122660] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:41:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KDroneState\x1b[m\x1b[K\xe2\x80\x99 is not a class, namespace, or enumeration\n'}
+[1.122686] (drone_control) StderrLine: {'line': b'   41 |                     current_state_ = \x1b[01;31m\x1b[KDroneState\x1b[m\x1b[K::FOLLOWING_TRAJECTORY;\n'}
+[1.122710] (drone_control) StderrLine: {'line': b'      |                                      \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.122736] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:43:22:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KDroneState\x1b[m\x1b[K\xe2\x80\x99 is not a class, namespace, or enumeration\n'}
+[1.122761] (drone_control) StderrLine: {'line': b'   43 |                 case \x1b[01;31m\x1b[KDroneState\x1b[m\x1b[K::FOLLOWING_TRAJECTORY:\n'}
+[1.122786] (drone_control) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.122811] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:45:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcurrent_waypoint_index_\x1b[m\x1b[K\xe2\x80\x99 is not captured\n'}
+[1.122837] (drone_control) StderrLine: {'line': b'   45 |                     if (\x1b[01;31m\x1b[Kcurrent_waypoint_index_\x1b[m\x1b[K < waypoints_.size()) {\n'}
+[1.122861] (drone_control) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.122889] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:32:30:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kthe lambda has no capture-default\n'}
+[1.122914] (drone_control) StderrLine: {'line': b'   32 |   auto timer_callback = [this\x1b[01;36m\x1b[K]\x1b[m\x1b[K() -> void {\n'}
+[1.122941] (drone_control) StderrLine: {'line': b'      |                              \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[1.122966] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:29:13:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kint current_waypoint_index_\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[1.123025] (drone_control) StderrLine: {'line': b'   29 |         int \x1b[01;36m\x1b[Kcurrent_waypoint_index_\x1b[m\x1b[K = 0;\n'}
+[1.123068] (drone_control) StderrLine: {'line': b'      |             \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.123100] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:45:51:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kwaypoints_\x1b[m\x1b[K\xe2\x80\x99 is not captured\n'}
+[1.123130] (drone_control) StderrLine: {'line': b'   45 |                     if (current_waypoint_index_ < \x1b[01;31m\x1b[Kwaypoints_\x1b[m\x1b[K.size()) {\n'}
+[1.123162] (drone_control) StderrLine: {'line': b'      |                                                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.123191] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:32:30:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kthe lambda has no capture-default\n'}
+[1.123222] (drone_control) StderrLine: {'line': b'   32 |   auto timer_callback = [this\x1b[01;36m\x1b[K]\x1b[m\x1b[K() -> void {\n'}
+[1.123252] (drone_control) StderrLine: {'line': b'      |                              \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[1.123280] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:28:56:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd::vector<px4_msgs::msg::TrajectorySetpoint_<std::allocator<void> > > waypoints_\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[1.123310] (drone_control) StderrLine: {'line': b'   28 |         std::vector<px4_msgs::msg::TrajectorySetpoint> \x1b[01;36m\x1b[Kwaypoints_\x1b[m\x1b[K;\n'}
+[1.123338] (drone_control) StderrLine: {'line': b'      |                                                        \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.123365] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:46:53:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kwaypoints_\x1b[m\x1b[K\xe2\x80\x99 is not captured\n'}
+[1.123394] (drone_control) StderrLine: {'line': b'   46 |                         publish_trajectory_setpoint(\x1b[01;31m\x1b[Kwaypoints_\x1b[m\x1b[K[current_waypoint_index_]);\n'}
+[1.123420] (drone_control) StderrLine: {'line': b'      |                                                     \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.123448] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:32:30:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kthe lambda has no capture-default\n'}
+[1.123474] (drone_control) StderrLine: {'line': b'   32 |   auto timer_callback = [this\x1b[01;36m\x1b[K]\x1b[m\x1b[K() -> void {\n'}
+[1.123500] (drone_control) StderrLine: {'line': b'      |                              \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[1.123527] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:28:56:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd::vector<px4_msgs::msg::TrajectorySetpoint_<std::allocator<void> > > waypoints_\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[1.123556] (drone_control) StderrLine: {'line': b'   28 |         std::vector<px4_msgs::msg::TrajectorySetpoint> \x1b[01;36m\x1b[Kwaypoints_\x1b[m\x1b[K;\n'}
+[1.123584] (drone_control) StderrLine: {'line': b'      |                                                        \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.123610] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:46:64:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcurrent_waypoint_index_\x1b[m\x1b[K\xe2\x80\x99 is not captured\n'}
+[1.123636] (drone_control) StderrLine: {'line': b'   46 |                       publish_trajectory_setpoint(waypoints_[\x1b[01;31m\x1b[Kcurrent_waypoint_index_\x1b[m\x1b[K]);\n'}
+[1.123662] (drone_control) StderrLine: {'line': b'      |                                                              \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.123689] (drone_control) StderrLine: {'line': b'\n'}
+[1.123750] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:32:30:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kthe lambda has no capture-default\n'}
+[1.123793] (drone_control) StderrLine: {'line': b'   32 |   auto timer_callback = [this\x1b[01;36m\x1b[K]\x1b[m\x1b[K() -> void {\n'}
+[1.123826] (drone_control) StderrLine: {'line': b'      |                              \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[1.123855] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:29:13:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kint current_waypoint_index_\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[1.123886] (drone_control) StderrLine: {'line': b'   29 |         int \x1b[01;36m\x1b[Kcurrent_waypoint_index_\x1b[m\x1b[K = 0;\n'}
+[1.123915] (drone_control) StderrLine: {'line': b'      |             \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.123942] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:47:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcurrent_waypoint_index_\x1b[m\x1b[K\xe2\x80\x99 is not captured\n'}
+[1.123970] (drone_control) StderrLine: {'line': b'   47 |                         \x1b[01;31m\x1b[Kcurrent_waypoint_index_\x1b[m\x1b[K++;\n'}
+[1.123997] (drone_control) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.124024] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:32:30:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kthe lambda has no capture-default\n'}
+[1.124050] (drone_control) StderrLine: {'line': b'   32 |   auto timer_callback = [this\x1b[01;36m\x1b[K]\x1b[m\x1b[K() -> void {\n'}
+[1.124080] (drone_control) StderrLine: {'line': b'      |                              \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[1.124126] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:29:13:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kint current_waypoint_index_\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[1.124279] (drone_control) StderrLine: {'line': b'   29 |         int \x1b[01;36m\x1b[Kcurrent_waypoint_index_\x1b[m\x1b[K = 0;\n'}
+[1.124312] (drone_control) StderrLine: {'line': b'      |             \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.124343] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:50:42:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KDroneState\x1b[m\x1b[K\xe2\x80\x99 is not a class, namespace, or enumeration\n'}
+[1.124375] (drone_control) StderrLine: {'line': b'   50 |                         current_state_ = \x1b[01;31m\x1b[KDroneState\x1b[m\x1b[K::LANDING;\n'}
+[1.124404] (drone_control) StderrLine: {'line': b'      |                                          \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.124431] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:53:22:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KDroneState\x1b[m\x1b[K\xe2\x80\x99 is not a class, namespace, or enumeration\n'}
+[1.124461] (drone_control) StderrLine: {'line': b'   53 |                 case \x1b[01;31m\x1b[KDroneState\x1b[m\x1b[K::LANDING:\n'}
+[1.124489] (drone_control) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.130894] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid DroneControl::publish_trajectory_setpoint(std::vector<int>)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.130985] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:105:24:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno match for \xe2\x80\x98\x1b[01m\x1b[Koperator=\x1b[m\x1b[K\xe2\x80\x99 (operand types are \xe2\x80\x98\x1b[01m\x1b[Kpx4_msgs::msg::TrajectorySetpoint_<std::allocator<void> >::_position_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kstd::array<float, 3>\x1b[m\x1b[K\xe2\x80\x99} and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int>\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[1.131027] (drone_control) StderrLine: {'line': b'  105 |         msg.position = \x1b[01;31m\x1b[Kposition\x1b[m\x1b[K;\n'}
+[1.131061] (drone_control) StderrLine: {'line': b'      |                        \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[1.131092] (drone_control) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/9/tuple:39\x1b[m\x1b[K,\n'}
+[1.131122] (drone_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/bits/unique_ptr.h:37\x1b[m\x1b[K,\n'}
+[1.131151] (drone_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:80\x1b[m\x1b[K,\n'}
+[1.131179] (drone_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[1.131206] (drone_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:1\x1b[m\x1b[K:\n'}
+[1.131234] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/array:94:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr std::array<float, 3>& std::array<float, 3>::operator=(const std::array<float, 3>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.131263] (drone_control) StderrLine: {'line': b'   94 |     struct \x1b[01;36m\x1b[Karray\x1b[m\x1b[K\n'}
+[1.131291] (drone_control) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[1.131318] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/array:94:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int>\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kconst std::array<float, 3>&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.131346] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/array:94:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr std::array<float, 3>& std::array<float, 3>::operator=(std::array<float, 3>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.131374] (drone_control) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/array:94:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int>\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kstd::array<float, 3>&&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.187672] (-) TimerEvent: {}
+[1.295618] (-) TimerEvent: {}
+[1.405210] (-) TimerEvent: {}
+[1.513693] (-) TimerEvent: {}
+[1.615883] (-) TimerEvent: {}
+[1.716636] (-) TimerEvent: {}
+[1.819563] (-) TimerEvent: {}
+[1.947724] (-) TimerEvent: {}
+[2.072512] (-) TimerEvent: {}
+[2.087599] (drone_control) StderrLine: {'line': b'make[2]: *** [CMakeFiles/drone_commander.dir/build.make:63: CMakeFiles/drone_commander.dir/src/send_command_template.cpp.o] Error 1\n'}
+[2.087791] (drone_control) StderrLine: {'line': b'make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/drone_commander.dir/all] Error 2\n'}
+[2.092828] (drone_control) StderrLine: {'line': b'make: *** [Makefile:141: all] Error 2\n'}
+[2.157035] (drone_control) CommandEnded: {'returncode': 2}
+[2.175377] (-) TimerEvent: {}
+[2.283819] (-) TimerEvent: {}
+[2.391440] (-) TimerEvent: {}
+[2.567402] (-) TimerEvent: {}
+[2.898606] (-) TimerEvent: {}
+[2.903175] (drone_control) JobEnded: {'identifier': 'drone_control', 'rc': 2}
+[2.914112] (-) EventReactorShutdown: {}

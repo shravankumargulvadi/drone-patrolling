@@ -1,0 +1,22 @@
+[0.273s] Invoking command in '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control -- -j14 -l14
+[0.308s] [35m[1mScanning dependencies of target drone_commander[0m
+[0.349s] [ 50%] [32mBuilding CXX object CMakeFiles/drone_commander.dir/src/send_command_template.cpp.o[0m
+[1.259s] [01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:[m[K In member function ‘[01m[Kvoid DroneControl::publish_trajectory_setpoint(std::vector<float>)[m[K’:
+[1.259s] [01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:102:24:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Kpx4_msgs::msg::TrajectorySetpoint_<std::allocator<void> >::_position_type[m[K’ {aka ‘[01m[Kstd::array<float, 3>[m[K’} and ‘[01m[Kstd::vector<float>[m[K’)
+[1.260s]   102 |         msg.position = [01;31m[Kposition[m[K;
+[1.260s]       |                        [01;31m[K^~~~~~~~[m[K
+[1.260s] In file included from [01m[K/usr/include/c++/9/tuple:39[m[K,
+[1.260s]                  from [01m[K/usr/include/c++/9/bits/unique_ptr.h:37[m[K,
+[1.260s]                  from [01m[K/usr/include/c++/9/memory:80[m[K,
+[1.260s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[1.260s]                  from [01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:1[m[K:
+[1.260s] [01m[K/usr/include/c++/9/array:94:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<float, 3>& std::array<float, 3>::operator=(const std::array<float, 3>&)[m[K’
+[1.260s]    94 |     struct [01;36m[Karray[m[K
+[1.260s]       |            [01;36m[K^~~~~[m[K
+[1.260s] [01m[K/usr/include/c++/9/array:94:12:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::vector<float>[m[K’ to ‘[01m[Kconst std::array<float, 3>&[m[K’
+[1.260s] [01m[K/usr/include/c++/9/array:94:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<float, 3>& std::array<float, 3>::operator=(std::array<float, 3>&&)[m[K’
+[1.260s] [01m[K/usr/include/c++/9/array:94:12:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::vector<float>[m[K’ to ‘[01m[Kstd::array<float, 3>&&[m[K’
+[1.971s] make[2]: *** [CMakeFiles/drone_commander.dir/build.make:63: CMakeFiles/drone_commander.dir/src/send_command_template.cpp.o] Error 1
+[1.971s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/drone_commander.dir/all] Error 2
+[1.971s] make: *** [Makefile:141: all] Error 2
+[1.973s] Invoked command in '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control -- -j14 -l14

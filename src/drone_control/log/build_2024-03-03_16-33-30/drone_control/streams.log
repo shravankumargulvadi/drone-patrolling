@@ -1,0 +1,14 @@
+[0.270s] Invoking command in '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control -- -j14 -l14
+[0.326s] [35m[1mScanning dependencies of target drone_commander[0m
+[0.349s] [ 50%] [32mBuilding CXX object CMakeFiles/drone_commander.dir/src/send_command_template.cpp.o[0m
+[1.315s] [01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:[m[K In member function ‘[01m[Kvoid DroneControl::take_off()[m[K’:
+[1.315s] [01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:120:51:[m[K [01;31m[Kerror: [m[Kcannot bind non-const lvalue reference of type ‘[01m[Kstd::array<float, 3>&[m[K’ to an rvalue of type ‘[01m[Kstd::array<float, 3>[m[K’
+[1.315s]   120 |         publish_trajectory_setpoint({0.0,0.0,-5.0}[01;31m[K)[m[K;
+[1.315s]       |                                                   [01;31m[K^[m[K
+[1.315s] [01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:99:60:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kvoid DroneControl::publish_trajectory_setpoint(std::array<float, 3>&)[m[K’
+[1.315s]    99 |     void publish_trajectory_setpoint([01;36m[Kstd::array<float, 3>& position[m[K)
+[1.316s]       |                                      [01;36m[K~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~[m[K
+[2.056s] make[2]: *** [CMakeFiles/drone_commander.dir/build.make:63: CMakeFiles/drone_commander.dir/src/send_command_template.cpp.o] Error 1
+[2.056s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/drone_commander.dir/all] Error 2
+[2.061s] make: *** [Makefile:141: all] Error 2
+[2.074s] Invoked command in '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control -- -j14 -l14

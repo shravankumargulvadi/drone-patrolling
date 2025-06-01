@@ -1,0 +1,26 @@
+[0.323s] Invoking command in '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control -- -j14 -l14
+[0.379s] [35m[1mScanning dependencies of target drone_commander[0m
+[0.427s] [ 50%] [32mBuilding CXX object CMakeFiles/drone_commander.dir/src/send_command_template.cpp.o[0m
+[3.008s] [100%] [32m[1mLinking CXX executable drone_commander[0m
+[3.192s] [100%] Built target drone_commander
+[3.216s] Invoked command in '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control -- -j14 -l14
+[3.258s] Invoking command in '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control
+[3.272s] -- Install configuration: ""
+[3.272s] -- Installing: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/lib/drone_control/drone_commander
+[3.274s] -- Set runtime path of "/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/lib/drone_control/drone_commander" to ""
+[3.275s] -- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/ament_index/resource_index/package_run_dependencies/drone_control
+[3.275s] -- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/ament_index/resource_index/parent_prefix_path/drone_control
+[3.275s] -- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/environment/ament_prefix_path.sh
+[3.275s] -- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/environment/ament_prefix_path.dsv
+[3.275s] -- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/environment/path.sh
+[3.275s] -- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/environment/path.dsv
+[3.276s] -- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/local_setup.bash
+[3.276s] -- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/local_setup.sh
+[3.276s] -- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/local_setup.zsh
+[3.276s] -- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/local_setup.dsv
+[3.276s] -- Installing: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/package.dsv
+[3.276s] -- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/ament_index/resource_index/packages/drone_control
+[3.276s] -- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/cmake/drone_controlConfig.cmake
+[3.276s] -- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/cmake/drone_controlConfig-version.cmake
+[3.276s] -- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/package.xml
+[3.280s] Invoked command in '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control

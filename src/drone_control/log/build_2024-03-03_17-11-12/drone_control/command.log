@@ -1,0 +1,4 @@
+Invoking command in '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control -- -j14 -l14
+Invoked command in '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control -- -j14 -l14
+Invoking command in '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control
+Invoked command in '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control

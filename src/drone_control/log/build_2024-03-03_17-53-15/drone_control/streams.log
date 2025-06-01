@@ -1,0 +1,14 @@
+[0.327s] Invoking command in '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control -- -j14 -l14
+[0.383s] [35m[1mScanning dependencies of target drone_commander[0m
+[0.403s] [ 50%] [32mBuilding CXX object CMakeFiles/drone_commander.dir/src/send_command_template.cpp.o[0m
+[1.340s] [01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:[m[K In lambda function:
+[1.349s] [01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:35:53:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kif[m[K’
+[1.349s]    35 |                     std::cout << "ready to take off"
+[1.349s]       |                                                     [01;31m[K^[m[K
+[1.349s]       |                                                     [32m[K;[m[K
+[1.349s]    36 |                     [32m[Kif[m[K (offboard_setpoint_counter_ == 10) {
+[1.349s]       |                     [32m[K~~[m[K                               
+[2.054s] make[2]: *** [CMakeFiles/drone_commander.dir/build.make:63: CMakeFiles/drone_commander.dir/src/send_command_template.cpp.o] Error 1
+[2.055s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/drone_commander.dir/all] Error 2
+[2.055s] make: *** [Makefile:141: all] Error 2
+[2.059s] Invoked command in '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control -- -j14 -l14

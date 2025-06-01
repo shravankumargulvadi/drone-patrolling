@@ -1,0 +1,10 @@
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:[m[K In lambda function:
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:35:53:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kif[m[K’
+   35 |                     std::cout << "ready to take off"
+      |                                                     [01;31m[K^[m[K
+      |                                                     [32m[K;[m[K
+   36 |                     [32m[Kif[m[K (offboard_setpoint_counter_ == 10) {
+      |                     [32m[K~~[m[K                               
+make[2]: *** [CMakeFiles/drone_commander.dir/build.make:63: CMakeFiles/drone_commander.dir/src/send_command_template.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/drone_commander.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

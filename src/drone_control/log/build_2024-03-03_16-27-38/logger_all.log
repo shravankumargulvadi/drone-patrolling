@@ -1,0 +1,79 @@
+[3.205s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[3.205s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f59c10e6400>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=14, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f59c10e6400>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f59c10e6970>)
+[3.346s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[3.346s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[3.347s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[3.347s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[3.347s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[3.347s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[3.347s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/eve-dse/ros2_ws/src/dse_obs_avoid'
+[3.347s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[3.347s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[3.347s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[3.347s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[3.347s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[3.347s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[3.347s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[3.347s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[3.347s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[3.364s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_cmake' and name 'drone_control'
+[3.364s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[3.364s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[3.364s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[3.364s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[3.364s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[3.650s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[3.651s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[3.757s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 3 installed packages in /home/eve-dse/ros2_ws/install
+[3.811s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 256 installed packages in /opt/ros/foxy
+[3.812s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[3.952s] Level 5:colcon.colcon_core.verb:set package 'drone_control' build argument 'cmake_args' from command line to 'None'
+[3.952s] Level 5:colcon.colcon_core.verb:set package 'drone_control' build argument 'cmake_target' from command line to 'None'
+[3.952s] Level 5:colcon.colcon_core.verb:set package 'drone_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.952s] Level 5:colcon.colcon_core.verb:set package 'drone_control' build argument 'cmake_clean_cache' from command line to 'False'
+[3.952s] Level 5:colcon.colcon_core.verb:set package 'drone_control' build argument 'cmake_clean_first' from command line to 'False'
+[3.952s] Level 5:colcon.colcon_core.verb:set package 'drone_control' build argument 'cmake_force_configure' from command line to 'False'
+[3.952s] Level 5:colcon.colcon_core.verb:set package 'drone_control' build argument 'ament_cmake_args' from command line to 'None'
+[3.952s] Level 5:colcon.colcon_core.verb:set package 'drone_control' build argument 'catkin_cmake_args' from command line to 'None'
+[3.953s] Level 5:colcon.colcon_core.verb:set package 'drone_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.953s] DEBUG:colcon.colcon_core.verb:Building package 'drone_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control', 'merge_install': False, 'path': '/home/eve-dse/ros2_ws/src/dse_obs_avoid', 'symlink_install': False, 'test_result_base': None}
+[4.007s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[4.063s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[4.063s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/eve-dse/ros2_ws/src/dse_obs_avoid' with build type 'ament_cmake'
+[4.063s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/eve-dse/ros2_ws/src/dse_obs_avoid'
+[4.132s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[4.132s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.132s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.338s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control -- -j14 -l14
+[6.039s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control -- -j14 -l14
+[6.164s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(drone_control)
+[6.220s] Level 1:colcon.colcon_core.environment:checking '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control' for CMake module files
+[6.221s] Level 1:colcon.colcon_core.environment:checking '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control' for CMake config files
+[6.221s] Level 1:colcon.colcon_core.environment:checking '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/bin'
+[6.221s] Level 1:colcon.colcon_core.environment:checking '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/lib/pkgconfig/drone_control.pc'
+[6.221s] Level 1:colcon.colcon_core.environment:checking '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/lib/python3.8/site-packages'
+[6.222s] Level 1:colcon.colcon_core.environment:checking '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/bin'
+[6.277s] INFO:colcon.colcon_core.shell:Creating package script '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/package.ps1'
+[6.278s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/package.dsv'
+[6.278s] INFO:colcon.colcon_core.shell:Creating package script '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/package.sh'
+[6.280s] INFO:colcon.colcon_core.shell:Creating package script '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/package.bash'
+[6.280s] INFO:colcon.colcon_core.shell:Creating package script '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/package.zsh'
+[6.281s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/colcon-core/packages/drone_control)
+[6.292s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[6.292s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[6.292s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[6.292s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[6.379s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[6.379s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[6.379s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[6.395s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[6.486s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/local_setup.ps1'
+[6.487s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/_local_setup_util_ps1.py'
+[6.488s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/setup.ps1'
+[6.555s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/local_setup.sh'
+[6.558s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/_local_setup_util_sh.py'
+[6.567s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/setup.sh'
+[6.638s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/local_setup.bash'
+[6.639s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/setup.bash'
+[6.727s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/local_setup.zsh'
+[6.728s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/setup.zsh'

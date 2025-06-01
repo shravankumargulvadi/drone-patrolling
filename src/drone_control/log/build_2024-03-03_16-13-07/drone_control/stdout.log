@@ -1,0 +1,2 @@
+[35m[1mScanning dependencies of target drone_commander[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/drone_commander.dir/src/send_command_template.cpp.o[0m

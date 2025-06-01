@@ -1,0 +1,134 @@
+[0.000000] (-) TimerEvent: {}
+[0.068963] (drone_control) JobQueued: {'identifier': 'drone_control', 'dependencies': OrderedDict()}
+[0.078691] (drone_control) JobStarted: {'identifier': 'drone_control'}
+[0.169064] (-) TimerEvent: {}
+[0.376354] (-) TimerEvent: {}
+[0.654675] (-) TimerEvent: {}
+[0.784617] (-) TimerEvent: {}
+[0.789023] (drone_control) JobProgress: {'identifier': 'drone_control', 'progress': 'cmake'}
+[0.933507] (drone_control) JobProgress: {'identifier': 'drone_control', 'progress': 'build'}
+[0.941386] (-) TimerEvent: {}
+[0.941512] (drone_control) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control', '--', '-j14', '-l14'], 'cwd': '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'eve-dse'), ('SSH_AGENT_PID', '1384'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/eve-dse/ros2_ws/install/px4_ros_com/lib:/home/eve-dse/ros2_ws/install/px4_msgs/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/home/eve-dse'), ('OLDPWD', '/home/eve-dse/ros2_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1029'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install:/home/eve-dse/ros2_ws/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'eve-dse'), ('JOURNAL_STREAM', '8:26621'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'eve-dse'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/foxy/bin:/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:/home/eve-dse/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/evedse-VirtualBox:@/tmp/.ICE-unix/1478,unix/evedse-VirtualBox:/tmp/.ICE-unix/1478'), ('INVOCATION_ID', 'c3ec06ea82494ef98782ea9b8cb40eb4'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/639379ea_d97c_4227_9a5b_0e3648eed0ba'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.80'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control:/home/eve-dse/ros2_ws/install/px4_ros_com:/home/eve-dse/ros2_ws/install/drone_control:/home/eve-dse/ros2_ws/install/px4_msgs:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/eve-dse/ros2_ws/install/px4_msgs/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control:/home/eve-dse/ros2_ws/install/px4_ros_com:/home/eve-dse/ros2_ws/install/drone_control:/home/eve-dse/ros2_ws/install/px4_msgs:/opt/ros/foxy')]), 'shell': False}
+[1.045989] (-) TimerEvent: {}
+[1.062523] (drone_control) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target drone_commander\x1b[0m\n'}
+[1.126442] (drone_control) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/drone_commander.dir/src/send_command_template.cpp.o\x1b[0m\n'}
+[1.151685] (-) TimerEvent: {}
+[1.276647] (-) TimerEvent: {}
+[1.407943] (-) TimerEvent: {}
+[1.578356] (-) TimerEvent: {}
+[1.682302] (-) TimerEvent: {}
+[1.788915] (-) TimerEvent: {}
+[1.918328] (-) TimerEvent: {}
+[2.032153] (-) TimerEvent: {}
+[2.180688] (-) TimerEvent: {}
+[2.309520] (-) TimerEvent: {}
+[2.413152] (-) TimerEvent: {}
+[2.530460] (-) TimerEvent: {}
+[2.631085] (-) TimerEvent: {}
+[2.738615] (-) TimerEvent: {}
+[2.851839] (-) TimerEvent: {}
+[2.957185] (-) TimerEvent: {}
+[3.066696] (-) TimerEvent: {}
+[3.178143] (-) TimerEvent: {}
+[3.290205] (-) TimerEvent: {}
+[3.397175] (-) TimerEvent: {}
+[3.506004] (-) TimerEvent: {}
+[3.628423] (-) TimerEvent: {}
+[3.755821] (-) TimerEvent: {}
+[3.873336] (-) TimerEvent: {}
+[3.975291] (-) TimerEvent: {}
+[4.089214] (-) TimerEvent: {}
+[4.201727] (-) TimerEvent: {}
+[4.325817] (-) TimerEvent: {}
+[4.434302] (-) TimerEvent: {}
+[4.538181] (-) TimerEvent: {}
+[4.663215] (-) TimerEvent: {}
+[4.775196] (-) TimerEvent: {}
+[4.880813] (-) TimerEvent: {}
+[4.993300] (-) TimerEvent: {}
+[5.108517] (-) TimerEvent: {}
+[5.213353] (-) TimerEvent: {}
+[5.327657] (-) TimerEvent: {}
+[5.449587] (-) TimerEvent: {}
+[5.560206] (-) TimerEvent: {}
+[5.675931] (-) TimerEvent: {}
+[5.783639] (-) TimerEvent: {}
+[5.916471] (-) TimerEvent: {}
+[6.025693] (-) TimerEvent: {}
+[6.168016] (-) TimerEvent: {}
+[6.284176] (-) TimerEvent: {}
+[6.404808] (-) TimerEvent: {}
+[6.515901] (-) TimerEvent: {}
+[6.623892] (-) TimerEvent: {}
+[6.726526] (-) TimerEvent: {}
+[6.843111] (-) TimerEvent: {}
+[6.952085] (-) TimerEvent: {}
+[7.057770] (-) TimerEvent: {}
+[7.169862] (-) TimerEvent: {}
+[7.285065] (-) TimerEvent: {}
+[7.392634] (-) TimerEvent: {}
+[7.496841] (-) TimerEvent: {}
+[7.606007] (-) TimerEvent: {}
+[7.715635] (-) TimerEvent: {}
+[7.831034] (-) TimerEvent: {}
+[7.957638] (-) TimerEvent: {}
+[8.073051] (-) TimerEvent: {}
+[8.186341] (-) TimerEvent: {}
+[8.307851] (-) TimerEvent: {}
+[8.411392] (-) TimerEvent: {}
+[8.541122] (-) TimerEvent: {}
+[8.720714] (-) TimerEvent: {}
+[8.831694] (-) TimerEvent: {}
+[8.925083] (drone_control) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable drone_commander\x1b[0m\n'}
+[8.932329] (-) TimerEvent: {}
+[9.037954] (-) TimerEvent: {}
+[9.153332] (-) TimerEvent: {}
+[9.289407] (-) TimerEvent: {}
+[9.405845] (-) TimerEvent: {}
+[9.514039] (drone_control) StdoutLine: {'line': b'[100%] Built target drone_commander\n'}
+[9.514235] (-) TimerEvent: {}
+[9.574100] (drone_control) CommandEnded: {'returncode': 0}
+[9.646673] (-) TimerEvent: {}
+[9.767865] (-) TimerEvent: {}
+[9.910698] (-) TimerEvent: {}
+[10.021701] (-) TimerEvent: {}
+[10.105416] (drone_control) JobProgress: {'identifier': 'drone_control', 'progress': 'install'}
+[10.126640] (-) TimerEvent: {}
+[10.192645] (drone_control) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control'], 'cwd': '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'eve-dse'), ('SSH_AGENT_PID', '1384'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/eve-dse/ros2_ws/install/px4_ros_com/lib:/home/eve-dse/ros2_ws/install/px4_msgs/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/home/eve-dse'), ('OLDPWD', '/home/eve-dse/ros2_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1029'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install:/home/eve-dse/ros2_ws/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'eve-dse'), ('JOURNAL_STREAM', '8:26621'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'eve-dse'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/foxy/bin:/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:/home/eve-dse/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/evedse-VirtualBox:@/tmp/.ICE-unix/1478,unix/evedse-VirtualBox:/tmp/.ICE-unix/1478'), ('INVOCATION_ID', 'c3ec06ea82494ef98782ea9b8cb40eb4'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/639379ea_d97c_4227_9a5b_0e3648eed0ba'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.80'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control:/home/eve-dse/ros2_ws/install/px4_ros_com:/home/eve-dse/ros2_ws/install/drone_control:/home/eve-dse/ros2_ws/install/px4_msgs:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/eve-dse/ros2_ws/install/px4_msgs/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control:/home/eve-dse/ros2_ws/install/px4_ros_com:/home/eve-dse/ros2_ws/install/drone_control:/home/eve-dse/ros2_ws/install/px4_msgs:/opt/ros/foxy')]), 'shell': False}
+[10.302200] (drone_control) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[10.302352] (-) TimerEvent: {}
+[10.302448] (drone_control) StdoutLine: {'line': b'-- Installing: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/lib/drone_control/drone_commander\n'}
+[10.302499] (drone_control) StdoutLine: {'line': b'-- Set runtime path of "/home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/lib/drone_control/drone_commander" to ""\n'}
+[10.302535] (drone_control) StdoutLine: {'line': b'-- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/ament_index/resource_index/package_run_dependencies/drone_control\n'}
+[10.302567] (drone_control) StdoutLine: {'line': b'-- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/ament_index/resource_index/parent_prefix_path/drone_control\n'}
+[10.302598] (drone_control) StdoutLine: {'line': b'-- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/environment/ament_prefix_path.sh\n'}
+[10.302629] (drone_control) StdoutLine: {'line': b'-- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/environment/ament_prefix_path.dsv\n'}
+[10.302658] (drone_control) StdoutLine: {'line': b'-- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/environment/path.sh\n'}
+[10.302688] (drone_control) StdoutLine: {'line': b'-- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/environment/path.dsv\n'}
+[10.302719] (drone_control) StdoutLine: {'line': b'-- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/local_setup.bash\n'}
+[10.302748] (drone_control) StdoutLine: {'line': b'-- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/local_setup.sh\n'}
+[10.302779] (drone_control) StdoutLine: {'line': b'-- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/local_setup.zsh\n'}
+[10.302809] (drone_control) StdoutLine: {'line': b'-- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/local_setup.dsv\n'}
+[10.302837] (drone_control) StdoutLine: {'line': b'-- Installing: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/package.dsv\n'}
+[10.302866] (drone_control) StdoutLine: {'line': b'-- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/ament_index/resource_index/packages/drone_control\n'}
+[10.302896] (drone_control) StdoutLine: {'line': b'-- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/cmake/drone_controlConfig.cmake\n'}
+[10.302925] (drone_control) StdoutLine: {'line': b'-- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/cmake/drone_controlConfig-version.cmake\n'}
+[10.302955] (drone_control) StdoutLine: {'line': b'-- Up-to-date: /home/eve-dse/ros2_ws/src/dse_obs_avoid/install/drone_control/share/drone_control/package.xml\n'}
+[10.340784] (drone_control) CommandEnded: {'returncode': 0}
+[10.445124] (-) TimerEvent: {}
+[10.550999] (-) TimerEvent: {}
+[10.699670] (-) TimerEvent: {}
+[10.906267] (-) TimerEvent: {}
+[11.019010] (-) TimerEvent: {}
+[11.132037] (-) TimerEvent: {}
+[11.250916] (-) TimerEvent: {}
+[11.388302] (-) TimerEvent: {}
+[11.508470] (-) TimerEvent: {}
+[11.641875] (-) TimerEvent: {}
+[11.809500] (-) TimerEvent: {}
+[12.003502] (-) TimerEvent: {}
+[12.418451] (-) TimerEvent: {}
+[12.570434] (-) TimerEvent: {}
+[12.766881] (drone_control) JobEnded: {'identifier': 'drone_control', 'rc': 0}
+[12.776063] (-) TimerEvent: {}
+[12.776143] (-) EventReactorShutdown: {}

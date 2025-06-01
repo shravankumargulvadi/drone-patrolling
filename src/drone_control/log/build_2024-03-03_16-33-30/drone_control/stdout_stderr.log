@@ -1,0 +1,12 @@
+[35m[1mScanning dependencies of target drone_commander[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/drone_commander.dir/src/send_command_template.cpp.o[0m
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:[m[K In member function ‘[01m[Kvoid DroneControl::take_off()[m[K’:
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:120:51:[m[K [01;31m[Kerror: [m[Kcannot bind non-const lvalue reference of type ‘[01m[Kstd::array<float, 3>&[m[K’ to an rvalue of type ‘[01m[Kstd::array<float, 3>[m[K’
+  120 |         publish_trajectory_setpoint({0.0,0.0,-5.0}[01;31m[K)[m[K;
+      |                                                   [01;31m[K^[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:99:60:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kvoid DroneControl::publish_trajectory_setpoint(std::array<float, 3>&)[m[K’
+   99 |     void publish_trajectory_setpoint([01;36m[Kstd::array<float, 3>& position[m[K)
+      |                                      [01;36m[K~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~[m[K
+make[2]: *** [CMakeFiles/drone_commander.dir/build.make:63: CMakeFiles/drone_commander.dir/src/send_command_template.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/drone_commander.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

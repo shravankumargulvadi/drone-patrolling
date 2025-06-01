@@ -1,0 +1,206 @@
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+-- Found FastRTPS: /opt/ros/foxy/include  
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found px4_msgs: 2.0.1 (/home/eve-dse/ros2_ws/install/px4_msgs/share/px4_msgs/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/eve-dse/ros2_ws/src/dse_obs_avoid/build/drone_control
+[35m[1mScanning dependencies of target drone_commander[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/drone_commander.dir/src/send_command_template.cpp.o[0m
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:162:1:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+  162 | [01;31m[K}[m[K
+      | [01;31m[K^[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:18:42:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+   18 | class DroneControl : public rclcpp::Node [01;36m[K{[m[K
+      |                                          [01;36m[K^[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:[m[K In constructor ‘[01m[KDroneControl::DroneControl()[m[K’:
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:21:9:[m[K [01;31m[Kerror: [m[K‘[01m[KinitializeWaypoints[m[K’ was not declared in this scope
+   21 |         [01;31m[KinitializeWaypoints[m[K();
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:23:9:[m[K [01;31m[Kerror: [m[K‘[01m[Koffboard_control_mode_publisher_[m[K’ was not declared in this scope
+   23 |         [01;31m[Koffboard_control_mode_publisher_[m[K = this->create_publisher<px4_msgs::msg::OffboardControlMode>("/fmu/in/offboard_control_mode", 10);
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:24:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ktrajectory_setpoint_publisher_[m[K’ was not declared in this scope
+   24 |         [01;31m[Ktrajectory_setpoint_publisher_[m[K = this->create_publisher<px4_msgs::msg::TrajectorySetpoint>("/fmu/in/trajectory_setpoint", 10);
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:25:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kvehicle_command_publisher_[m[K’ was not declared in this scope
+   25 |   [01;31m[Kvehicle_command_publisher_[m[K = this->create_publisher<px4_msgs::msg::VehicleCommand>("/fmu/in/vehicle_command", 10);
+      |   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:27:9:[m[K [01;31m[Kerror: [m[K‘[01m[KDroneState[m[K’ was not declared in this scope
+   27 |         [01;31m[KDroneState[m[K current_state_ = DroneState::WAITING;
+      |         [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:30:9:[m[K [01;31m[Kerror: [m[K‘[01m[Koffboard_setpoint_counter_[m[K’ was not declared in this scope
+   30 |         [01;31m[Koffboard_setpoint_counter_[m[K = 0;
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:[m[K In lambda function:
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:33:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_state_[m[K’ was not declared in this scope
+   33 |             switch ([01;31m[Kcurrent_state_[m[K) {
+      |                     [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:34:22:[m[K [01;31m[Kerror: [m[K‘[01m[KDroneState[m[K’ is not a class, namespace, or enumeration
+   34 |                 case [01;31m[KDroneState[m[K::WAITING:
+      |                      [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:35:21:[m[K [01;31m[Kerror: [m[K‘[01m[Ktake_off[m[K’ was not declared in this scope
+   35 |                     [01;31m[Ktake_off[m[K()
+      |                     [01;31m[K^~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:38:22:[m[K [01;31m[Kerror: [m[K‘[01m[KDroneState[m[K’ is not a class, namespace, or enumeration
+   38 |                 case [01;31m[KDroneState[m[K::TAKING_OFF:
+      |                      [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:41:38:[m[K [01;31m[Kerror: [m[K‘[01m[KDroneState[m[K’ is not a class, namespace, or enumeration
+   41 |                     current_state_ = [01;31m[KDroneState[m[K::FOLLOWING_TRAJECTORY;
+      |                                      [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:43:22:[m[K [01;31m[Kerror: [m[K‘[01m[KDroneState[m[K’ is not a class, namespace, or enumeration
+   43 |                 case [01;31m[KDroneState[m[K::FOLLOWING_TRAJECTORY:
+      |                      [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:45:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_waypoint_index_[m[K’ is not captured
+   45 |                     if ([01;31m[Kcurrent_waypoint_index_[m[K < waypoints_.size()) {
+      |                         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:32:30:[m[K [01;36m[Knote: [m[Kthe lambda has no capture-default
+   32 |   auto timer_callback = [this[01;36m[K][m[K() -> void {
+      |                              [01;36m[K^[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:29:13:[m[K [01;36m[Knote: [m[K‘[01m[Kint current_waypoint_index_[m[K’ declared here
+   29 |         int [01;36m[Kcurrent_waypoint_index_[m[K = 0;
+      |             [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:45:51:[m[K [01;31m[Kerror: [m[K‘[01m[Kwaypoints_[m[K’ is not captured
+   45 |                     if (current_waypoint_index_ < [01;31m[Kwaypoints_[m[K.size()) {
+      |                                                   [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:32:30:[m[K [01;36m[Knote: [m[Kthe lambda has no capture-default
+   32 |   auto timer_callback = [this[01;36m[K][m[K() -> void {
+      |                              [01;36m[K^[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:28:56:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::vector<px4_msgs::msg::TrajectorySetpoint_<std::allocator<void> > > waypoints_[m[K’ declared here
+   28 |         std::vector<px4_msgs::msg::TrajectorySetpoint> [01;36m[Kwaypoints_[m[K;
+      |                                                        [01;36m[K^~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:46:53:[m[K [01;31m[Kerror: [m[K‘[01m[Kwaypoints_[m[K’ is not captured
+   46 |                         publish_trajectory_setpoint([01;31m[Kwaypoints_[m[K[current_waypoint_index_]);
+      |                                                     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:32:30:[m[K [01;36m[Knote: [m[Kthe lambda has no capture-default
+   32 |   auto timer_callback = [this[01;36m[K][m[K() -> void {
+      |                              [01;36m[K^[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:28:56:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::vector<px4_msgs::msg::TrajectorySetpoint_<std::allocator<void> > > waypoints_[m[K’ declared here
+   28 |         std::vector<px4_msgs::msg::TrajectorySetpoint> [01;36m[Kwaypoints_[m[K;
+      |                                                        [01;36m[K^~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:46:64:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_waypoint_index_[m[K’ is not captured
+   46 |                       publish_trajectory_setpoint(waypoints_[[01;31m[Kcurrent_waypoint_index_[m[K]);
+      |                                                              [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:32:30:[m[K [01;36m[Knote: [m[Kthe lambda has no capture-default
+   32 |   auto timer_callback = [this[01;36m[K][m[K() -> void {
+      |                              [01;36m[K^[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:29:13:[m[K [01;36m[Knote: [m[K‘[01m[Kint current_waypoint_index_[m[K’ declared here
+   29 |         int [01;36m[Kcurrent_waypoint_index_[m[K = 0;
+      |             [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:46:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublish_trajectory_setpoint[m[K’ was not declared in this scope
+   46 |                         [01;31m[Kpublish_trajectory_setpoint[m[K(waypoints_[current_waypoint_index_]);
+      |                         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:47:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_waypoint_index_[m[K’ is not captured
+   47 |                         [01;31m[Kcurrent_waypoint_index_[m[K++;
+      |                         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:32:30:[m[K [01;36m[Knote: [m[Kthe lambda has no capture-default
+   32 |   auto timer_callback = [this[01;36m[K][m[K() -> void {
+      |                              [01;36m[K^[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:29:13:[m[K [01;36m[Knote: [m[K‘[01m[Kint current_waypoint_index_[m[K’ declared here
+   29 |         int [01;36m[Kcurrent_waypoint_index_[m[K = 0;
+      |             [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:50:42:[m[K [01;31m[Kerror: [m[K‘[01m[KDroneState[m[K’ is not a class, namespace, or enumeration
+   50 |                         current_state_ = [01;31m[KDroneState[m[K::LANDING;
+      |                                          [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:53:22:[m[K [01;31m[Kerror: [m[K‘[01m[KDroneState[m[K’ is not a class, namespace, or enumeration
+   53 |                 case [01;31m[KDroneState[m[K::LANDING:
+      |                      [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:60:3:[m[K [01;31m[Kerror: [m[K‘[01m[Ktimer_[m[K’ was not declared in this scope; did you mean ‘[01m[Ktimer_t[m[K’?
+   60 |   [01;31m[Ktimer_[m[K = this->create_wall_timer(100ms, timer_callback);
+      |   [01;31m[K^~~~~~[m[K
+      |   [32m[Ktimer_t[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:60:43:[m[K [01;31m[Kerror: [m[Kuse of ‘[01m[Ktimer_callback[m[K’ before deduction of ‘[01m[Kauto[m[K’
+   60 |   timer_ = this->create_wall_timer(100ms, [01;31m[Ktimer_callback[m[K);
+      |                                           [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:[m[K In constructor ‘[01m[KDroneControl::DroneControl()[m[K’:
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:65:1:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K;[m[K’ before ‘[01m[Kprivate[m[K’
+   65 | [01;31m[Kprivate[m[K:
+      | [01;31m[K^~~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:67:32:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+   67 |     void initializeWaypoints() [01;31m[K{[m[K
+      |                                [01;31m[K^[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:78:5:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+   78 |     [01;31m[K{[m[K
+      |     [01;31m[K^[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:90:5:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+   90 |     [01;31m[K{[m[K
+      |     [01;31m[K^[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:96:5:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+   96 |     [01;31m[K{[m[K
+      |     [01;31m[K^[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:101:38:[m[K [01;31m[Kerror: [m[Kvariable or field ‘[01m[Kpublish_trajectory_setpoint[m[K’ declared void
+  101 |     void publish_trajectory_setpoint([01;31m[Kvector[m[K<int> position)
+      |                                      [01;31m[K^~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:101:38:[m[K [01;31m[Kerror: [m[K‘[01m[Kvector[m[K’ was not declared in this scope
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:101:38:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+In file included from [01m[K/usr/include/c++/9/vector:67[m[K,
+                 from [01m[K/usr/include/c++/9/functional:62[m[K,
+                 from [01m[K/usr/include/c++/9/pstl/glue_algorithm_defs.h:13[m[K,
+                 from [01m[K/usr/include/c++/9/algorithm:71[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executor.hpp:18[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+                 from [01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:1[m[K:
+[01m[K/usr/include/c++/9/bits/stl_vector.h:386:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::vector[m[K’
+  386 |     class [01;36m[Kvector[m[K : protected _Vector_base<_Tp, _Alloc>
+      |           [01;36m[K^~~~~~[m[K
+In file included from [01m[K/usr/include/c++/9/functional:62[m[K,
+                 from [01m[K/usr/include/c++/9/pstl/glue_algorithm_defs.h:13[m[K,
+                 from [01m[K/usr/include/c++/9/algorithm:71[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executor.hpp:18[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+                 from [01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:1[m[K:
+[01m[K/usr/include/c++/9/vector:90:13:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::pmr::vector[m[K’
+   90 |       using [01;36m[Kvector[m[K = std::vector<_Tp, polymorphic_allocator<_Tp>>;
+      |             [01;36m[K^~~~~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:101:45:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kint[m[K’
+  101 |     void publish_trajectory_setpoint(vector<[01;31m[Kint[m[K> position)
+      |                                             [01;31m[K^~~[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:111:5:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+  111 |     [01;31m[K{[m[K
+      |     [01;31m[K^[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:132:5:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+  132 |     [01;31m[K{[m[K
+      |     [01;31m[K^[m[K
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:[m[K At global scope:
+[01m[K/home/eve-dse/ros2_ws/src/dse_obs_avoid/src/send_command_template.cpp:162:1:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id at end of input
+  162 | [01;31m[K}[m[K
+      | [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/drone_commander.dir/build.make:63: CMakeFiles/drone_commander.dir/src/send_command_template.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/drone_commander.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
