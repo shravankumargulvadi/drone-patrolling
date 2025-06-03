@@ -18,10 +18,10 @@ find_package(px4_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 
 # Add your executable
-add_executable(drone_commander src/send_command_template.cpp)
+add_executable(drone_manager src/drone_manager.cpp)
 
 # Specify dependencies for your executable
-ament_target_dependencies(drone_commander
+ament_target_dependencies(drone_manager
   rclcpp
   px4_msgs
   geometry_msgs
@@ -29,7 +29,7 @@ ament_target_dependencies(drone_commander
 
 # Install the executable
 install(TARGETS
-  drone_commander
+  drone_manager
   DESTINATION lib/${PROJECT_NAME}
 )
 
