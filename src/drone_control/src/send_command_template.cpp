@@ -38,11 +38,6 @@ public:
         offboard_control_mode_publisher_ = this->create_publisher<px4_msgs::msg::OffboardControlMode>("/fmu/in/offboard_control_mode", 10);
         trajectory_setpoint_publisher_ = this->create_publisher<px4_msgs::msg::TrajectorySetpoint>("/fmu/in/trajectory_setpoint", 10);
 		vehicle_command_publisher_ = this->create_publisher<px4_msgs::msg::VehicleCommand>("/fmu/in/vehicle_command", 10);  
-        //auto qos = rclcpp::QoS(rclcpp::KeepLast(1), rmw_qos_profile_sensor_data);
-        
-        // local_position_subscriber = this->create_subscription<px4_msgs::msg::VehicleLocalPosition>(
-        //    "/fmu/out/vehicle_local_position", qos,
-        //    std::bind(&DroneControl::local_position_callback, this,std::placeholders::_1 )); 
 
         rclcpp::QoS qos{rclcpp::SensorDataQoS()};
         qos.keep_last(10); // or more if needed
@@ -83,25 +78,27 @@ public:
                     break;
                    
                 case FlightState::TAKING_OFF:
-                    //log state
-                    //take off the drone
-                    next_waypoint = {0, 0, -8};//square_waypoints_[0];
-                    if (offboard_setpoint_counter_ == 10) {
-                        publish_vehicle_command(px4_msgs::msg::VehicleCommand::VEHICLE_CMD_DO_SET_MODE, 1, 6);
-                        arm();
-                    }
+                    // Constantly publish setpoints and offboard control mode
+                    next_waypoint = {0, 0, -8};  // takeoff waypoint
+
                     publish_offboard_control_mode();
                     publish_trajectory_setpoint(next_waypoint);
+
+                    if (offboard_setpoint_counter_ == 10) {
+                        // After 10 cycles (~500ms), send OFFBOARD mode command and arm
+                        publish_vehicle_command(px4_msgs::msg::VehicleCommand::VEHICLE_CMD_DO_SET_MODE, 1, 6);  // PX4_NAVIGATION_STATE_OFFBOARD
+                        arm();
+                    }
 
                     if (offboard_setpoint_counter_ < 11) {
                         offboard_setpoint_counter_++;
                     }
-                    current_state_ = FlightState::TAKING_OFF;
-                    if(waypoint_reached)
-                    {
+
+                    if (waypoint_reached) {
                         current_state_ = FlightState::HOVERING;
                     }
-                    RCLCPP_INFO(this->get_logger(), "Taking off");
+
+                    RCLCPP_INFO(this->get_logger(), "Taking off...");
                     break;
                     
 
@@ -112,25 +109,34 @@ public:
                     break;
 
                 case FlightState::FOLLOWING_TRAJECTORY:
-                    // Command the drone to move to the next waypoint
+                    // Always publish control mode and setpoint at >2Hz
+                    publish_offboard_control_mode();
+
                     if (current_waypoint_index_ < trajectory_waypoints.size()) {
-                        next_waypoint = {trajectory_waypoints[current_waypoint_index_][0]
-                            ,trajectory_waypoints[current_waypoint_index_][1], trajectory_waypoints[current_waypoint_index_][2]};
+                        next_waypoint = {
+                            trajectory_waypoints[current_waypoint_index_][0],
+                            trajectory_waypoints[current_waypoint_index_][1],
+                            trajectory_waypoints[current_waypoint_index_][2]
+                        };
+
                         publish_trajectory_setpoint(next_waypoint);
-                        RCLCPP_INFO(this->get_logger(), " set waypoint: %f, %f, %f", trajectory_waypoints[current_waypoint_index_][0], 
-                        trajectory_waypoints[current_waypoint_index_][1], trajectory_waypoints[current_waypoint_index_][2]);
-                        if(waypoint_reached)
-                        {
+
+                        RCLCPP_INFO(this->get_logger(), "Set waypoint: %.2f, %.2f, %.2f",
+                                    next_waypoint[0], next_waypoint[1], next_waypoint[2]);
+
+                        if (waypoint_reached) {
                             current_waypoint_index_++;
+                            RCLCPP_INFO(this->get_logger(), "Waypoint %lu reached. Moving to next.",
+                                        current_waypoint_index_ - 1);
                         }
-                        
                     } else {
-                        // Once all waypoints are reached, prepare to land
-                        //current_state_ = FlightState::LANDING;
-                        RCLCPP_INFO(this->get_logger(), "Track completed");
+                        RCLCPP_INFO(this->get_logger(), "Trajectory completed. All waypoints visited.");
+                        // Optionally: initiate landing or hover
                     }
-                    RCLCPP_INFO(this->get_logger(), "Following Trajectory");
+
                     break;
+                    
+
             }
 
 			
@@ -166,6 +172,19 @@ private:
         offboard_control_mode_publisher_->publish(msg);
     }
 
+    void publish_trajectory_setpoint(std::array<float, 3> position)
+    {
+        px4_msgs::msg::TrajectorySetpoint msg{};
+        msg.position = position;
+        msg.velocity = {NAN, NAN, NAN};
+        msg.acceleration = {NAN, NAN, NAN};
+        msg.yaw = NAN;
+        msg.yawspeed = NAN;
+        msg.timestamp = this->get_clock()->now().nanoseconds() / 1000;
+        trajectory_setpoint_publisher_->publish(msg);
+    }
+
+
     void vehicle_status_cb(const px4_msgs::msg::VehicleStatus::SharedPtr msg)
     {
         armed_ = (msg->arming_state == px4_msgs::msg::VehicleStatus::ARMING_STATE_ARMED);
@@ -181,14 +200,6 @@ private:
     {
         publish_vehicle_command(px4_msgs::msg::VehicleCommand::VEHICLE_CMD_COMPONENT_ARM_DISARM, 0.0, 0.0);
 
-    }
-
-    void publish_trajectory_setpoint(std::array<float, 3> position)
-    {
-        px4_msgs::msg::TrajectorySetpoint msg{};
-        msg.position = position;
-        msg.timestamp = this->get_clock()->now().nanoseconds() / 1000;
-        trajectory_setpoint_publisher_->publish(msg);
     }
 
     void publish_vehicle_command(uint16_t command, float param1, float param2)
@@ -299,7 +310,7 @@ private:
     float kIsFlyingThreshold;
 
     rclcpp::TimerBase::SharedPtr timer_;
-     rclcpp::Subscription<px4_msgs::msg::VehicleStatus>::SharedPtr        vehicle_status_sub_; 
+    rclcpp::Subscription<px4_msgs::msg::VehicleStatus>::SharedPtr        vehicle_status_sub_; 
 
     rclcpp::Subscription<px4_msgs::msg::VehicleLocalPosition>::SharedPtr local_position_subscriber;
 
