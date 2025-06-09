@@ -16,6 +16,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(px4_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
 
 # Add your executable
 add_executable(drone_manager src/drone_manager.cpp)
@@ -25,11 +26,21 @@ ament_target_dependencies(drone_manager
   rclcpp
   px4_msgs
   geometry_msgs
+  std_msgs
+)
+
+add_executable(ground_control_node src/ground_control_node.cpp)
+
+ament_target_dependencies(ground_control_node 
+  rclcpp 
+  std_msgs 
+  geometry_msgs
 )
 
 # Install the executable
 install(TARGETS
   drone_manager
+  ground_control_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
