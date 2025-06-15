@@ -20,25 +20,60 @@ class DroneManager : public rclcpp::Node
 public:
     DroneManager() : Node("drone_manager")
     {
-        this->declare_parameter<std::string>("drone_id", "drone1");
+        this->declare_parameter<std::string>("drone_id", "");
         this->get_parameter("drone_id", drone_id_);
 
-        std::string ns = "/" + drone_id_;
+        // std::string ns = drone_id_;
 
-        offboard_control_mode_pub_ = this->create_publisher<px4_msgs::msg::OffboardControlMode>("/fmu/in/offboard_control_mode", 10);
-        trajectory_setpoint_pub_ = this->create_publisher<px4_msgs::msg::TrajectorySetpoint>("/fmu/in/trajectory_setpoint", 10);
-        vehicle_command_pub_ = this->create_publisher<px4_msgs::msg::VehicleCommand>("/fmu/in/vehicle_command", 10);
+        // offboard_control_mode_pub_ = this->create_publisher<px4_msgs::msg::OffboardControlMode>(ns +"/fmu/in/offboard_control_mode", 10);
+        // trajectory_setpoint_pub_ = this->create_publisher<px4_msgs::msg::TrajectorySetpoint>(ns + "/fmu/in/trajectory_setpoint", 10);
+        // vehicle_command_pub_ = this->create_publisher<px4_msgs::msg::VehicleCommand>(ns +"/fmu/in/vehicle_command", 10);
+
+        // rclcpp::QoS qos_profile{rclcpp::SensorDataQoS()};
+
+        // vehicle_status_sub_ = this->create_subscription<px4_msgs::msg::VehicleStatus>(ns +"/fmu/out/vehicle_status", qos_profile,
+        //     std::bind(&DroneManager::vehicle_status_callback, this, std::placeholders::_1));
+
+        // local_position_sub_ = this->create_subscription<px4_msgs::msg::VehicleLocalPosition>(ns + "/fmu/out/vehicle_local_position", qos_profile,
+        //     std::bind(&DroneManager::local_position_callback, this, std::placeholders::_1));
+
+        // trajectory_sub_ = this->create_subscription<geometry_msgs::msg::PoseArray>(
+        //     ns + "/trajectory_upload", 10, std::bind(&DroneManager::trajectory_callback, this, std::placeholders::_1));
+
+        std::string ns = drone_id_;
+
+        std::string offboard_topic = ns + "/fmu/in/offboard_control_mode";
+        std::string trajectory_topic = ns + "/fmu/in/trajectory_setpoint";
+        std::string vehicle_cmd_topic = ns + "/fmu/in/vehicle_command";
+        std::string status_topic = ns + "/fmu/out/vehicle_status";
+        std::string local_pos_topic = ns + "/fmu/out/vehicle_local_position";
+        std::string traj_upload_topic = ns + "/trajectory_upload";
+
+        RCLCPP_INFO(this->get_logger(), "Publishing to:");
+        RCLCPP_INFO(this->get_logger(), "  %s", offboard_topic.c_str());
+        RCLCPP_INFO(this->get_logger(), "  %s", trajectory_topic.c_str());
+        RCLCPP_INFO(this->get_logger(), "  %s", vehicle_cmd_topic.c_str());
+        RCLCPP_INFO(this->get_logger(), "Subscribing to:");
+        RCLCPP_INFO(this->get_logger(), "  %s", status_topic.c_str());
+        RCLCPP_INFO(this->get_logger(), "  %s", local_pos_topic.c_str());
+        RCLCPP_INFO(this->get_logger(), "  %s", traj_upload_topic.c_str());
+
+        offboard_control_mode_pub_ = this->create_publisher<px4_msgs::msg::OffboardControlMode>(offboard_topic, 10);
+        trajectory_setpoint_pub_ = this->create_publisher<px4_msgs::msg::TrajectorySetpoint>(trajectory_topic, 10);
+        vehicle_command_pub_ = this->create_publisher<px4_msgs::msg::VehicleCommand>(vehicle_cmd_topic, 10);
 
         rclcpp::QoS qos_profile{rclcpp::SensorDataQoS()};
 
-        vehicle_status_sub_ = this->create_subscription<px4_msgs::msg::VehicleStatus>("/fmu/out/vehicle_status", qos_profile,
+        vehicle_status_sub_ = this->create_subscription<px4_msgs::msg::VehicleStatus>(
+            status_topic, qos_profile,
             std::bind(&DroneManager::vehicle_status_callback, this, std::placeholders::_1));
 
-        local_position_sub_ = this->create_subscription<px4_msgs::msg::VehicleLocalPosition>("/fmu/out/vehicle_local_position", qos_profile,
-            std::bind(&DroneManager::local_position_callback, this, std::placeholders::_1));
+        local_position_sub_ = this->create_subscription<px4_msgs::msg::VehicleLocalPosition>(
+            local_pos_topic, qos_profile,
+        std::bind(&DroneManager::local_position_callback, this, std::placeholders::_1));
 
         trajectory_sub_ = this->create_subscription<geometry_msgs::msg::PoseArray>(
-            ns + "/trajectory_upload", 10, std::bind(&DroneManager::trajectory_callback, this, std::placeholders::_1));
+            traj_upload_topic, 10, std::bind(&DroneManager::trajectory_callback, this, std::placeholders::_1));
 
         timer_ = this->create_wall_timer(50ms, std::bind(&DroneManager::control_loop, this));
     }
@@ -146,6 +181,16 @@ private:
             set_offboard_mode();
             arm();
         }
+        // if (offboard_setpoint_counter_ % 20 == 0 && !armed_) {  // Every 1 second
+        //     RCLCPP_INFO(this->get_logger(), "Retrying OFFBOARD mode command");
+        //     set_offboard_mode();
+        // }
+        // if ((offboard_setpoint_counter_ + 10) % 20 == 0 && !armed_) {
+        //     RCLCPP_INFO(this->get_logger(), "Retrying ARM command");
+        //     arm();
+        // }
+
+
         if (waypoint_reached_)
         {
             current_state_ = FlightState::HOVERING;

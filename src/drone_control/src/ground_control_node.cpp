@@ -8,12 +8,12 @@ class GCSNode : public rclcpp::Node
 public:
     GCSNode() : Node("gcs_node")
     {
-        this->declare_parameter<std::vector<std::string>>("drone_ids", {"drone1"});
+        this->declare_parameter<std::vector<std::string>>("drone_ids", {""});
         this->get_parameter("drone_ids", drone_ids_);
 
         for (const auto &id : drone_ids_)
         {
-            std::string topic = "/" + id + "/trajectory_upload";
+            std::string topic = id + "/trajectory_upload";
             auto pub = this->create_publisher<geometry_msgs::msg::PoseArray>(topic, 10);
             publishers_.emplace_back(pub);
         }
