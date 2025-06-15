@@ -20,27 +20,10 @@ class DroneManager : public rclcpp::Node
 public:
     DroneManager() : Node("drone_manager")
     {
-        this->declare_parameter<std::string>("drone_id", "");
+        this->declare_parameter<int>("drone_id", 0);
         this->get_parameter("drone_id", drone_id_);
 
-        // std::string ns = drone_id_;
-
-        // offboard_control_mode_pub_ = this->create_publisher<px4_msgs::msg::OffboardControlMode>(ns +"/fmu/in/offboard_control_mode", 10);
-        // trajectory_setpoint_pub_ = this->create_publisher<px4_msgs::msg::TrajectorySetpoint>(ns + "/fmu/in/trajectory_setpoint", 10);
-        // vehicle_command_pub_ = this->create_publisher<px4_msgs::msg::VehicleCommand>(ns +"/fmu/in/vehicle_command", 10);
-
-        // rclcpp::QoS qos_profile{rclcpp::SensorDataQoS()};
-
-        // vehicle_status_sub_ = this->create_subscription<px4_msgs::msg::VehicleStatus>(ns +"/fmu/out/vehicle_status", qos_profile,
-        //     std::bind(&DroneManager::vehicle_status_callback, this, std::placeholders::_1));
-
-        // local_position_sub_ = this->create_subscription<px4_msgs::msg::VehicleLocalPosition>(ns + "/fmu/out/vehicle_local_position", qos_profile,
-        //     std::bind(&DroneManager::local_position_callback, this, std::placeholders::_1));
-
-        // trajectory_sub_ = this->create_subscription<geometry_msgs::msg::PoseArray>(
-        //     ns + "/trajectory_upload", 10, std::bind(&DroneManager::trajectory_callback, this, std::placeholders::_1));
-
-        std::string ns = drone_id_;
+        std::string ns = "/px4_" + std::to_string(drone_id_);
 
         std::string offboard_topic = ns + "/fmu/in/offboard_control_mode";
         std::string trajectory_topic = ns + "/fmu/in/trajectory_setpoint";
@@ -79,7 +62,7 @@ public:
     }
 
 private:
-    std::string drone_id_;
+    int drone_id_;
     rclcpp::TimerBase::SharedPtr timer_;
 
     rclcpp::Publisher<px4_msgs::msg::OffboardControlMode>::SharedPtr offboard_control_mode_pub_;
@@ -135,7 +118,7 @@ private:
         msg.param1 = param1;
         msg.param2 = param2;
         msg.command = command;
-        msg.target_system = 1;
+        msg.target_system = drone_id_ + 1;
         msg.target_component = 1;
         msg.source_system = 1;
         msg.source_component = 1;
@@ -181,15 +164,6 @@ private:
             set_offboard_mode();
             arm();
         }
-        // if (offboard_setpoint_counter_ % 20 == 0 && !armed_) {  // Every 1 second
-        //     RCLCPP_INFO(this->get_logger(), "Retrying OFFBOARD mode command");
-        //     set_offboard_mode();
-        // }
-        // if ((offboard_setpoint_counter_ + 10) % 20 == 0 && !armed_) {
-        //     RCLCPP_INFO(this->get_logger(), "Retrying ARM command");
-        //     arm();
-        // }
-
 
         if (waypoint_reached_)
         {
