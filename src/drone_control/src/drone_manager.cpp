@@ -87,9 +87,13 @@ private:
     void trajectory_callback(const geometry_msgs::msg::PoseArray::SharedPtr msg)
     {
         waypoints_.clear();
-        for (const auto &pose : msg->poses)
-        {
-            waypoints_.emplace_back(std::array<float, 3>{pose.position.x, pose.position.y, pose.position.z});
+        for (const auto &pose : msg->poses) {
+          std::array<float, 3> waypoint = {
+            static_cast<float>(pose.position.x),
+            static_cast<float>(pose.position.y), 
+            static_cast<float>(pose.position.z)
+          };
+          waypoints_.push_back(waypoint);
         }
         RCLCPP_INFO(this->get_logger(), "Received trajectory with %zu waypoints", waypoints_.size());
         current_state_ = FlightState::TAKING_OFF;
