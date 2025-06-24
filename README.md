@@ -108,4 +108,42 @@ cd ~/vtca/px4_swarm_ws/src/drone-patrolling
 source install/setup.bash
 ros2 run drone_control ground_control_node --ros-args -p drone_ids:='["px4_1", "px4_2"]'
 ```
+## Setting up environment for Object Detection
+### Requirements
+```
+Ubuntu 22.04
 
+ROS 2 Humble
+
+Python 3.10
+
+OpenCV
+
+YOLOv8 (via ultralytics)
+
+cv_bridge for ROS <-> OpenCV conversion
+```
+### Installation Instructions
+1. Clone this package into your ROS 2 workspace
+```
+cd ~/Projects/ros2_ws/src
+git clone <your-repo-url> object_detector
+```
+
+2. Install Python dependencies
+Make sure you're in the same Python environment as ROS 2 (system or virtualenv):
+```
+pip install ultralytics opencv-python
+```
+
+3. Install ROS dependencies
+```
+sudo apt update
+sudo apt install ros-humble-cv-bridge python3-colcon-common-extensions
+```
+4. Build the workspace
+```
+cd ~/Projects/ros2_ws
+colcon build --packages-select object_detector
+source install/setup.bash
+```
