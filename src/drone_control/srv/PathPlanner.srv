@@ -1,0 +1,17 @@
+## Request
+float64 latitude_min
+float64 latitude_max
+float64 longitude_min
+float64 longitude_max
+# Frame of reference.
+float64 origin_latitude
+float64 origin_longitude
+float64 origin_altitude
+# If request has coordinates in x & y, latitude / longitude / origin can remain empty.
+float64 min_x
+float64 min_y
+float64 max_x
+float64 max_y
+---
+# Response
+action_msgs/GoalStatus goal_status
