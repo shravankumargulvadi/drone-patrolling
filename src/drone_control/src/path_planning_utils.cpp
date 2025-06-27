@@ -12,12 +12,13 @@ using ::geometry_msgs::msg::Point;
 }  // namespace
 
 std::vector<PointOfInterest> DivideBoundingBoxByParts(
-    const geometry_msgs::msg::Point& min_pt,
-    const geometry_msgs::msg::Point& max_pt, int n_parts,
+    const Point& min_pt, const Point& max_pt, int n_parts,
     std::shared_ptr<rclcpp::Clock> clock) {
   std::vector<PointOfInterest> pois;
   // TODO(mkedia): LOG something and return status ?
   if (n_parts <= 0) {
+    RCLCPP_INFO(this->get_logger(),
+                "Number of parts to divide the survey area is: %d", n_parts);
     return pois;
   }
   if (n_parts == 1) {
@@ -61,12 +62,12 @@ std::vector<PointOfInterest> DivideBoundingBoxByParts(
 }
 
 std::vector<PointOfInterest> DivideBoundingBoxByArea(
-    const geometry_msgs::msg::Point& min_pt,
-    const geometry_msgs::msg::Point& max_pt, double max_sub_area,
+    const Point& min_pt, const Point& max_pt, double max_sub_area,
     std::shared_ptr<rclcpp::Clock> clock) {
   std::vector<PointOfInterest> pois;
-  // TODO(mkedia): LOG something and return status ?
   if (max_sub_area <= 0) {
+    RCLCPP_INFO(this->get_logger(), "Drone's survey capacity is incorrect %.2f",
+                max_sub_area);
     return pois;
   }
   double x_length = max_pt.x - min_pt.x;
@@ -85,8 +86,8 @@ std::vector<PointOfInterest> DivideBoundingBoxByArea(
 // TODO(mkedia): Following aspects can be improved
 // - Handling aspect ratio based S curve (to minimize turns)
 // - Handling missing survey area if swath width is not divisible by Y distance
-// - Validation
-// - Initial / Final poisition of Drone
+// - Fix different "pod" locations for each Drone, or "acquire" pod when going
+// home.
 geometry_msgs::msg::PoseArray ComputeWaypoints(
     const PointOfInterest& poi, std::shared_ptr<rclcpp::Clock> clock,
     double swath_width, double drone_altitude, double survey_altitude) {

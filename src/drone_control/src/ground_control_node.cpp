@@ -5,7 +5,6 @@
 #include "drone_control/msg/drone_status.hpp"
 #include "drone_control/path_planning_utils.hpp"
 #include "drone_control/srv/path_planner.hpp"
-#include "geodesy/utm.h"
 #include "geographic_msgs/msg/geo_point.hpp"
 #include "geometry_msgs/msg/point.hpp"
 #include "geometry_msgs/msg/pose_array.hpp"
@@ -21,12 +20,12 @@ using geometry_msgs::msg::PoseArray;
 using vtca::path_planner::DivideBoundingBoxByArea;
 using vtca::path_planner::PointOfInterest;
 
-constexpr double kIrisSwathWidth = 10;
+constexpr double kX500SwathWidth = 10;
 constexpr double kSurveyAltitude = -20.0;
 constexpr double kMaxAltitude = 1000;
 constexpr double kDroneSurveyCapacity = 10000;
 static const rclcpp::Duration kMaxAssignedDuration =
-    rclcpp::Duration::from_seconds(60 * 60);
+    rclcpp::Duration::from_seconds(60 * 60);  // 1 hour.
 }  // namespace
 
 class GCSNode : public rclcpp::Node {
@@ -49,8 +48,8 @@ class GCSNode : public rclcpp::Node {
           });
       drone_subscribers_.push_back(sub);
 
-      auto pub =
-          this->create_publisher<PoseArray>("/" + id + "/trajectory_upload", 10);
+      auto pub = this->create_publisher<PoseArray>(
+          "/" + id + "/trajectory_upload", 10);
       trajectory_publishers_.insert({id, pub});
 
       // Assign drone altitudes "slots" above survey altitude.
@@ -64,30 +63,26 @@ class GCSNode : public rclcpp::Node {
   }
 
  private:
-  rclcpp::TimerBase::SharedPtr timer_;
   rclcpp::Service<PathPlanner>::SharedPtr service_;
-  std::vector<rclcpp::Subscription<DroneStatus>::SharedPtr> drone_subscribers_;
   std::unordered_map<
       std::string, rclcpp::Publisher<geometry_msgs::msg::PoseArray>::SharedPtr>
       trajectory_publishers_;
+  std::vector<rclcpp::Subscription<DroneStatus>::SharedPtr> drone_subscribers_;
   // Allocated altitude to drones for traveling to & from surveys.
   std::unordered_map<std::string, double> drone_altitudes_;
+  rclcpp::TimerBase::SharedPtr timer_;
   std::vector<std::string> drone_ids_;
-
+  std::vector<PointOfInterest> pois_;
+  std::mutex poi_mutex_;
   bool survey_on_ = false;
-  geographic_msgs::msg::GeoPoint map_origin_;
-  geographic_msgs::msg::GeoPoint survey_geo_min_pt_;
-  geographic_msgs::msg::GeoPoint survey_geo_max_pt_;
 
   void PathPlannerService(const std::shared_ptr<PathPlanner::Request> request,
                           std::shared_ptr<PathPlanner::Response> response) {
-    RCLCPP_INFO(
-        this->get_logger(),
-        "Incoming request:\n"
-        "  min_x: %.6f, min_y: %.6f\n"
-        "  max_x: %.6f, max_y: %.6f\n",
-        request->min_x, request->min_y, request->max_x,
-        request->max_y);
+    RCLCPP_INFO(this->get_logger(),
+                "Incoming request:\n"
+                "  min_x: %.6f, min_y: %.6f\n"
+                "  max_x: %.6f, max_y: %.6f\n",
+                request->min_x, request->min_y, request->max_x, request->max_y);
     ValidatePlannerCommand(request);
     ConstructPointsOfInterests(request);
     if (StartSurvey()) {
@@ -103,52 +98,12 @@ class GCSNode : public rclcpp::Node {
 
   // Wrap up previous survey if any ?
   void ValidatePlannerCommand(
-      const std::shared_ptr<PathPlanner::Request> /*request*/) {}
-
-  bool StartSurvey() {
-    if (!pois_.empty()) {
-      survey_on_ = true;
-      RCLCPP_INFO(this->get_logger(),
-                  "Starting new survey with %d drones and %d number of survey "
-                  "blocks for the entire survey area.",
-                  drone_ids_.size(), pois_.size());
-    } else {
-      RCLCPP_INFO(this->get_logger(),
-                  "Failed to start new survey with %d drones. No survey blocks "
-                  "generated.",
-                  drone_ids_.size());
-    }
-    // Turn on whatever needs to be turned on for the timer callbk to start
-    // functioning.
-    return survey_on_;
+      const std::shared_ptr<PathPlanner::Request> /*request*/) {
+    // TODO(mkedia): Validate request.
   }
 
   void ConstructPointsOfInterests(
       const std::shared_ptr<PathPlanner::Request> request) {
-    /*
-    survey_geo_min_pt_.latitude = request->latitude_min;
-    survey_geo_min_pt_.longitude = request->longitude_min;
-    survey_geo_max_pt_.latitude = request->latitude_max;
-    survey_geo_max_pt_.longitude = request->longitude_max;
-
-    map_origin_.latitude = request->origin_latitude;
-    map_origin_.longitude = request->origin_longitude;
-    map_origin_.altitude = request->origin_altitude;
-
-    geodesy::UTMPoint utm_origin(map_origin_);
-
-    geodesy::UTMPoint utm_min_pt(survey_geo_min_pt_);
-    geodesy::UTMPoint utm_max_pt(survey_geo_max_pt_);
-
-    Point local_min_pt;
-    local_min_pt.x = utm_min_pt.easting - utm_origin.easting;
-    local_min_pt.y = utm_min_pt.northing - utm_origin.northing;
-    local_min_pt.z = kSurveyAltitude;
-    Point local_max_pt;
-    local_max_pt.x = utm_max_pt.easting - utm_origin.easting;
-    local_max_pt.y = utm_max_pt.northing - utm_origin.northing;
-    local_max_pt.z = kSurveyAltitude;
-    */
     Point local_min_pt;
     local_min_pt.x = request->min_x;
     local_min_pt.y = request->min_y;
@@ -171,8 +126,21 @@ class GCSNode : public rclcpp::Node {
     }
   }
 
-  std::vector<PointOfInterest> pois_;
-  std::mutex poi_mutex_;
+  bool StartSurvey() {
+    if (!pois_.empty()) {
+      survey_on_ = true;
+      RCLCPP_INFO(this->get_logger(),
+                  "Starting new survey with %d drones and %d number of survey "
+                  "blocks for the entire survey area.",
+                  drone_ids_.size(), pois_.size());
+    } else {
+      RCLCPP_INFO(this->get_logger(),
+                  "Failed to start new survey with %d drones. No survey blocks "
+                  "generated.",
+                  drone_ids_.size());
+    }
+    return survey_on_;
+  }
 
   void SurveyStandby() {
     if (!survey_on_) {
@@ -197,15 +165,18 @@ class GCSNode : public rclcpp::Node {
   }
 
   void SendTrajectory(const std::string& drone_id, const PointOfInterest& poi) {
-    RCLCPP_INFO(this->get_logger(), "Sending trajectory for  poi for drone: %s", drone_id.c_str());
+    RCLCPP_INFO(this->get_logger(), "Sending trajectory for  poi for drone: %s",
+                drone_id.c_str());
     if (auto drone_altitude = drone_altitudes_.find(drone_id);
         drone_altitude != drone_altitudes_.end()) {
-    RCLCPP_INFO(this->get_logger(), "Computing waypoints for drone: %s", drone_id.c_str());
+      RCLCPP_INFO(this->get_logger(), "Computing waypoints for drone: %s",
+                  drone_id.c_str());
       geometry_msgs::msg::PoseArray trajectory =
           vtca::path_planner::ComputeWaypoints(
-              poi, this->get_clock(), kIrisSwathWidth, drone_altitude->second,
+              poi, this->get_clock(), kX500SwathWidth, drone_altitude->second,
               kSurveyAltitude);
-      RCLCPP_INFO(this->get_logger(), "Sending waypoints for drone: %s", drone_id.c_str());
+      RCLCPP_INFO(this->get_logger(), "Sending waypoints for drone: %s",
+                  drone_id.c_str());
       trajectory_publishers_[drone_id]->publish(trajectory);
     } else {
       RCLCPP_WARN(this->get_logger(),
@@ -218,9 +189,6 @@ class GCSNode : public rclcpp::Node {
 
   void DroneUpdateSubscriberCb(const DroneStatus::SharedPtr& update,
                                const std::string& drone_id) {
-    // TODO(mkedia): Update lock mechanism to lock only inidividual POIs when
-    // not allocating a drone to them and only doing status update. Acquire lock
-    // to cycle through and find all POIs.
     std::lock_guard<std::mutex> lock(poi_mutex_);
     if (update->status == DroneStatus::STATE_AVAILABLE) {
       PointOfInterest* max_reward_poi = nullptr;
@@ -228,7 +196,6 @@ class GCSNode : public rclcpp::Node {
       for (auto& poi : pois_) {
         if (poi.allocated_drone_id_.empty() &&
             poi.assignment_ == PointOfInterest::SurveyAssignment::UNASSIGNED) {
-          RCLCPP_INFO(this->get_logger(), "Found Unassigned poi for drone: %s", drone_id.c_str());
           if (poi.reward_ > max_reward) {
             max_reward_poi = &poi;
             max_reward = poi.reward_;
@@ -236,14 +203,15 @@ class GCSNode : public rclcpp::Node {
         }
       }
       if (max_reward_poi != nullptr) {
-        RCLCPP_INFO(this->get_logger(), "Found max reward poi for drone: %s", drone_id.c_str());
         max_reward_poi->allocated_drone_id_ = drone_id;
         max_reward_poi->assignment_ =
             PointOfInterest::SurveyAssignment::ASSIGNED;
         max_reward_poi->last_assigned_time_ = this->get_clock()->now();
       }
       if (max_reward_poi != nullptr) {
-        RCLCPP_INFO(this->get_logger(), "Sending trajectory for max reward poi for drone: %s", drone_id.c_str());
+        RCLCPP_INFO(this->get_logger(),
+                    "Sending trajectory for max reward poi for drone: %s",
+                    drone_id.c_str());
         SendTrajectory(drone_id, *max_reward_poi);
       }
     }
@@ -283,12 +251,11 @@ class GCSNode : public rclcpp::Node {
             "Did not find POI which was previously assigned drone_id: %s, even "
             "though drone update suggests survey was complete",
             drone_id.c_str());
-        // TODO(mkedia): Update POI reward by poi_id ? May have freed the poi
-        // because STATE_STARTING_SURVEY wasn't received.
       }
     }
     if (update->status == DroneStatus::STATE_SURVEY_ONGOING) {
-      RCLCPP_INFO(this->get_logger(), "Drone %s is surveying", drone_id.c_str());
+      RCLCPP_INFO(this->get_logger(), "Drone %s is surveying",
+                  drone_id.c_str());
     }
   }
 };
@@ -299,12 +266,13 @@ int main(int argc, char** argv) {
   auto client = node->create_client<PathPlanner>("path_planner");
   while (!client->wait_for_service(std::chrono::seconds(1))) {
     if (!rclcpp::ok()) {
-            RCLCPP_ERROR(node->get_logger(), "Interrupted while waiting for service. Exiting.");
-            return 0;
-        }
+      RCLCPP_ERROR(node->get_logger(),
+                   "Interrupted while waiting for service. Exiting.");
+      return 0;
+    }
     RCLCPP_INFO(node->get_logger(), "Service not available, waiting again...");
   }
-  
+
   auto request = std::make_shared<PathPlanner::Request>();
   request->min_x = 10.0;
   request->min_y = 10.0;
@@ -312,14 +280,14 @@ int main(int argc, char** argv) {
   request->max_y = 1010.0;
 
   auto result_future = client->async_send_request(request);
-  if (rclcpp::spin_until_future_complete(node, result_future) == rclcpp::FutureReturnCode::SUCCESS) {
-        RCLCPP_INFO(node->get_logger(), "Survey accepted");
-    } else {
-        RCLCPP_ERROR(node->get_logger(), "Failed to call service planner_service");
-    }
+  if (rclcpp::spin_until_future_complete(node, result_future) ==
+      rclcpp::FutureReturnCode::SUCCESS) {
+    RCLCPP_INFO(node->get_logger(), "Survey accepted");
+  } else {
+    RCLCPP_ERROR(node->get_logger(), "Failed to call service planner_service");
+  }
 
   rclcpp::spin(node);
-
   rclcpp::shutdown();
   return 0;
 }

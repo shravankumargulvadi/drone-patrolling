@@ -56,7 +56,6 @@ ament_target_dependencies(drone_manager
 
 # Only for external dependencies.
 ament_target_dependencies(ground_control_node 
-  geodesy
   geographic_msgs
   geometry_msgs
   rclcpp 
