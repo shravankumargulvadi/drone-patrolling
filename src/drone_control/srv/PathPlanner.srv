@@ -1,0 +1,10 @@
+# Request
+
+# Provide SW min_pt and NE max_pt of the survey rectangle.
+float64 min_x
+float64 min_y
+float64 max_x
+float64 max_y
+---
+# Response
+action_msgs/GoalStatus goal_status

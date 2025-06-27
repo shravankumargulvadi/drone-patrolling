@@ -1,0 +1,67 @@
+# ROS 2 Specific Files
+# --------------------
+# Ignores the 'build' directory created by colcon build
+build/
+# Ignores the 'install' directory where packages are installed by colcon install
+install/
+# Ignores the 'log' directory for ROS 2 logging output
+log/
+# Common C++ Build Artifacts
+# --------------------------
+# Object files
+*.o
+# Executable files
+*.exe
+# Shared libraries (Linux)
+*.so
+# Static libraries (Linux)
+*.a
+# Dynamic link libraries (Windows)
+*.dll
+# Program database files (Windows)
+*.pdb
+# Debugging information (macOS)
+*.dSYM/
+# Compiled Python files (if Python nodes are present)
+*.pyc
+__pycache__/
+
+# Editor and IDE Specific Files
+# -----------------------------
+# Vim swap files
+*.swp
+*.swo
+# Emacs lock files
+*~
+# VS Code
+.vscode/
+# Visual Studio
+*.suo
+*.user
+*.ncb
+*.aps
+*.vs/
+ipch/
+
+# Operating System Files
+# ----------------------
+# macOS
+.DS_Store
+.Trashes
+ehthumbs.db
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Other Common Ignored Files
+# --------------------------
+# Environment variables or configuration files that might contain sensitive info
+.env
+.env.*
+*.local
+# User specific configuration that should not be committed
+*.userconfig
+# Backup files
+*.bak
+*.orig

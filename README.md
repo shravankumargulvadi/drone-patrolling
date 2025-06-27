@@ -35,7 +35,8 @@ git clone https://github.com/PX4/px4_ros_com.git
 sudo rosdep init
 rosdep update
 
-# From the src directory. Only install px4_msgs & px4_ros_com.
+# Only install px4_msgs & px4_ros_com.
+cd ~/vtca/px4_swarm_ws/
 colcon build --executor sequential --symlink-install --packages-up-to px4_msgs px4_ros_com
 
 ```
@@ -83,6 +84,7 @@ pkill -9 gzclient
 pkill -9 gzserver 
 
 # Start multiple drone simulation (each in new terminal)
+# Following instructions from: https://docs.px4.io/main/en/sim_gazebo_gz/multi_vehicle_simulation.html
 
 PX4_SYS_AUTOSTART=4001 PX4_SIM_MODEL=gz_x500 ./build/px4_sitl_default/bin/px4 -i 1
 
