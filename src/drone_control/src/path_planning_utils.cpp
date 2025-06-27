@@ -2,6 +2,7 @@
 
 #include "geometry_msgs/msg/pose_array.hpp"
 #include "rclcpp/clock.hpp"
+#include "rclcpp/rclcpp.hpp"
 #include "rclcpp/time.hpp"
 
 namespace vtca::path_planner {
@@ -17,7 +18,7 @@ std::vector<PointOfInterest> DivideBoundingBoxByParts(
   std::vector<PointOfInterest> pois;
   // TODO(mkedia): LOG something and return status ?
   if (n_parts <= 0) {
-    RCLCPP_INFO(this->get_logger(),
+    RCLCPP_INFO(rclcpp::get_logger("path_planning_utils"),
                 "Number of parts to divide the survey area is: %d", n_parts);
     return pois;
   }
@@ -66,7 +67,7 @@ std::vector<PointOfInterest> DivideBoundingBoxByArea(
     std::shared_ptr<rclcpp::Clock> clock) {
   std::vector<PointOfInterest> pois;
   if (max_sub_area <= 0) {
-    RCLCPP_INFO(this->get_logger(), "Drone's survey capacity is incorrect %.2f",
+    RCLCPP_INFO(rclcpp::get_logger("path_planning_utils"), "Drone's survey capacity is incorrect %.2f",
                 max_sub_area);
     return pois;
   }
